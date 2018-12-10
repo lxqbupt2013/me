@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/tab1/tab1",
-    "pages/tab2/tab2"
+    "pages/heart/heart",
+    "pages/money/money"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,14 +15,14 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/tab1/tab1",
-        "text": "tab1",
+        "pagePath": "pages/heart/heart",
+        "text": "心情",
         "iconPath": "images/heart-unselect.png",
         "selectedIconPath": "images/heart.png"
       },
       {
-        "pagePath": "pages/tab2/tab2",
-        "text": "tab2",
+        "pagePath": "pages/money/money",
+        "text": "账本",
         "iconPath": "images/zhangben-unselect.png",
         "selectedIconPath": "images/zhangben.png"
       }
