@@ -1,0 +1,73 @@
+/* pages/heart/heart.wxss */
+
+.table {
+    width: 100%;
+    background-color: rgba(230, 252, 250, 0.479);
+    border:1px solid #dadada;
+    margin-top: 0.8rem;
+}
+
+.table-head {
+    text-align: center !important;
+    color: coral !important;
+    font-size: 0.8rem !important;
+    background-color: #efefef;
+    line-height: 2.8rem;
+}
+
+.me-list {
+    width: 100%;
+    line-height: 2.8rem;
+    margin: -0.15rem 0 0 0;
+}
+
+.me-list .flex-item {
+    text-align: center;
+    border-top: dashed 1px #efefef;
+}
+
+.me-week {
+    display: inline-block;
+    width: 25%;
+    color: #666;
+    font-size: 0.7rem;
+    border-right: dashed 1px #efefef;
+}
+
+.me-mood {
+    display: inline-block;
+    width: 25%;
+    font-size: 0.8rem;
+    color: #333;
+    border-right: dashed 1px #efefef;
+}
+
+.me-weight {
+    display: inline-block;
+    width: 25%;
+    font-size: 0.8rem;
+    color: #333;
+    border-right: dashed 1px #efefef;
+}
+
+.me-date {
+    display: inline-block;
+    width: 24%;
+    color: #666;
+    font-size: 0.7rem;
+}
+
+button {
+  background-color: bisque !important;
+  width: 98%;
+  height: 2.5rem;
+}
+
+.me-mood image{
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  line-height: 2.8rem;
+  vertical-align: middle;
+  overflow: hidden;
+}

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/heart/heart",
-    "pages/money/money"
+    "pages/me/me",
+    "pages/money/money",
+    "pages/addMood/addMood"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,14 +16,14 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/heart/heart",
-        "text": "心情",
+        "pagePath": "pages/me/me",
+        "text": "ME",
         "iconPath": "images/heart-unselect.png",
         "selectedIconPath": "images/heart.png"
       },
       {
         "pagePath": "pages/money/money",
-        "text": "账本",
+        "text": "MONEY",
         "iconPath": "images/zhangben-unselect.png",
         "selectedIconPath": "images/zhangben.png"
       }

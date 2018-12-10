@@ -1,0 +1,20 @@
+<!--pages/heart/heart.wxml-->
+<button type="default" bindtap="addMood"> ADD </button>
+<view class="table">
+    <text>
+      <text class="flex-item me-week table-head">WEEK</text>
+      <text class="flex-item me-mood table-head">MOOD</text>
+      <text class="flex-item me-weight table-head">WEIGHT</text>
+      <text class="flex-item me-date table-head">DATE</text>
+    </text>
+    <view wx:for="{{me}}" class="me-list flex-wrp" style="flex-direction:row;">
+      <text class="flex-item me-week" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}">{{item.week}}</text>
+      <view class="flex-item me-mood" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}" wx:if="{{item.mood == 1}}"><image src="../../images/1.png"></image> </view>
+      <view class="flex-item me-mood" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}" wx:elif="{{item.mood == 2}}"><image src="../../images/2.png"></image></view>
+      <view class="flex-item me-mood" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}" wx:elif="{{item.mood == 3}}"><image src="../../images/3.png"></image></view>
+      <view class="flex-item me-mood" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}" wx:elif="{{item.mood == 4}}"><image src="../../images/4.png"></image></view>
+      <view class="flex-item me-mood" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}" wx:elif="{{item.mood == 5}}"><image src="../../images/5.png"></image></view>
+      <text class="flex-item me-weight" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}">{{item.weight}} kg</text>
+      <text class="flex-item me-date" bindtap="modifyMe" data-index="{{item.mood - 1}}" data-value="{{item}}">{{item.date}}</text>
+    </view>
+</view>

@@ -1,0 +1,20 @@
+/* pages/addMood/addMood.wxss */
+.mood image {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  line-height: 2.8rem;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.mood label {
+  display: block;
+}
+
+.picker {
+  display: inline-block;
+  width: 98%;
+  height: 2.5rem;
+  border: solid 1px #efefef;
+}
