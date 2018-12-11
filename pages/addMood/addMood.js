@@ -17,6 +17,40 @@ Page({
       date: e.detail.value
     })
   },
+  sortMe: function (me) {
+
+    let newMeArr = [];
+    let length = me.length;
+
+    for(let j = 0; j < length; j++) {
+      let maxIndex = 0;
+      for (let i = 0; i < me.length; i++) {
+        let date1 = new Date(me[i].date)
+        let date2 = new Date(me[maxIndex].date)
+     
+        if (date1.getTime() > date2.getTime()) {
+          maxIndex = i;
+        }
+      }
+      newMeArr.push(me[maxIndex]);
+      me.splice(maxIndex, 1);
+    }
+
+    return newMeArr;
+  },
+  mergeMe: function (newMe, me) {
+
+    let newDate = newMe.date;
+
+    for (let i = 0; i < me.length; i ++) {
+      if (me[i].date == newDate) {
+        me.splice(i, 1);
+      }
+    }
+    me.push(newMe);
+    let newMeArr = this.sortMe(me)
+    return newMeArr;
+  },
   getWeek: function (date) {
     switch (date) {
       case 1: return 'MONDAY';
@@ -25,11 +59,11 @@ Page({
       case 4: return 'THURSDAY';
       case 5: return 'FRIDAY';
       case 6: return 'SATURDAY';
-      case 7: return 'SUNDAY';
+      case 0: return 'SUNDAY';
     }
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    // console.log('form发生了submit事件，携带数据为：', e.detail.value)
     let dataValue = new Date(e.detail.value.date);
     let newDate = dataValue.toLocaleDateString()
     let newWeek = this.getWeek(dataValue.getDay());
@@ -39,14 +73,17 @@ Page({
     newMe.weight = e.detail.value.weight;
     newMe.date = newDate;
     newMe.week = newWeek;
+    let that = this;
 
     wx.getStorage({
       key: 'me',
       complete(res) {
-          let me= res.data || [];
-          me.push(newMe)
-          wx.setStorageSync('me', me)
-          wx.navigateBack();
+        let me = res.data || [];
+
+        let meArr = that.mergeMe(newMe, me);
+
+        wx.setStorageSync('me', meArr)
+        wx.navigateBack();
       }
     })    
   },

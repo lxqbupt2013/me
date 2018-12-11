@@ -1,42 +1,4 @@
 // pages/heart/heart.js
-// const me = [
-//   {
-//     "date": '2018-12-09',
-//     "week": 'Monday',
-//     "mood": '3',
-//     "weight": 52
-//   }, {
-//     "date": '2018-12-09',
-//     "week": 'Monday',
-//     "mood": '4',
-//     "weight": 52
-//   }, {
-//     "date": '2018-12-06',
-//     "week": 'Monday',
-//     "mood": '5',
-//     "weight": 52
-//   }, {
-//     "date": '2018-12-07',
-//     "week": 'Monday',
-//     "mood": '1',
-//     "weight": 52
-//   }, {
-//     "date": '2018-12-08',
-//     "week": 'Monday',
-//     "mood": '1',
-//     "weight": 52
-//   }, {
-//     "date": '2018-12-09',
-//     "week": 'Monday',
-//     "mood": '2',
-//     "weight": 52
-//   }, {
-//     "date": '2018-12-10',
-//     "week": 'Monday',
-//     "mood": '2',
-//     "weight": 52
-//   }
-// ];
 
 Page({
   /**
@@ -46,13 +8,17 @@ Page({
     me: [],
     hidden: false
   },
-  cancel: function () {
-    this.setData({
-      hidden: true
-    });
+  addMood: function () {
+    wx.navigateTo({
+      url: '../addMood/addMood'
+    })
   },
-  confirm: function () {
-  
+  modifyMe: function (e) {
+    let value = e.currentTarget.dataset.value;
+    let index = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '../addMood/addMood?value=' + JSON.stringify(value) + '&index=' + index
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -113,17 +79,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  addMood: function () {
-    wx.navigateTo({
-      url: '../addMood/addMood'
-    })
-  },
-  modifyMe: function (e) {
-    let value = e.currentTarget.dataset.value;
-    let index = e.currentTarget.dataset.index;
-    wx.navigateTo({
-      url: '../addMood/addMood?value=' + JSON.stringify(value) + '&index=' + index
-    })    
   }
 })
