@@ -1,11 +1,21 @@
 // pages/money/money.js
 Page({
+  addBill: function () {
+    wx.navigateTo({
+      url: '../addBill/addBill',
+    });
+  },
+  modifyBill: function () {
 
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    bill: [{
+      "total": 100,
+      "date": "2018-12-12"
+    }]
   },
   clear: function () {
     wx.setStorageSync('me', [])

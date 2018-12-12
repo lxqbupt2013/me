@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/me/me",
-    "pages/money/money",
-    "pages/addMood/addMood"
+    "pages/bill/bill",
+    "pages/addMood/addMood",
+    "pages/addBill/addBill"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,8 +23,8 @@
         "selectedIconPath": "images/heart.png"
       },
       {
-        "pagePath": "pages/money/money",
-        "text": "MONEY",
+        "pagePath": "pages/bill/bill",
+        "text": "BILL",
         "iconPath": "images/zhangben-unselect.png",
         "selectedIconPath": "images/zhangben.png"
       }

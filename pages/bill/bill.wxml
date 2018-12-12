@@ -1,0 +1,15 @@
+<!--pages/bill/bill.wxml-->
+<text>pages/bill/bill.wxml</text>
+<button type="default" bindtap="addBill"> ADD </button>
+<button type="default" bindtap="clear"> clear </button>
+
+<view class="list">
+    <text>
+      <text class="flex-item me-week table-head">TOTAL</text>
+      <text class="flex-item me-date table-head">DATE</text>
+    </text>
+    <view wx:for="{{bill}}" class="bill-list flex-wrp" style="flex-direction:row;">
+      <text class="flex-item bill-total" bindtap="modifyBill" data-index="{{item.total - 1}}" data-value="{{item}}">{{item.total}}</text>
+      <text class="flex-item bill-date" bindtap="modifyBill" data-index="{{item.date - 1}}" data-value="{{item}}">{{item.date}}</text>
+    </view>
+</view>
